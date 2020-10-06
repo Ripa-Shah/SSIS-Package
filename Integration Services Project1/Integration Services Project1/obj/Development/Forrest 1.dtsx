@@ -1,0 +1,1692 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/3/2020 7:25:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{38A4EFE1-4FBF-4E4A-A68D-9B47B213F070}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Package1"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{6A17B14E-BB47-408B-98A5-B1ABA520BABE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C5682E7F-CE7E-494A-ACB7-EA909CF7F3F9}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=TmsForrestHuman;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1B8B4A79-0A1A-49AE-96A4-1147BA7606BE}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\19498\Downloads\Forrest and its effects\Forrest.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Goal"
+              DTS:DTSID="{89B9D458-BF19-41B2-8E6D-68B6CEC15E2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Target"
+              DTS:DTSID="{5A9C02E4-3341-4445-AC40-C2F9A2658D45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Indicator"
+              DTS:DTSID="{4518A685-3212-48E7-9F63-754A9F60E17B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeriesCode"
+              DTS:DTSID="{DC806973-C175-47B9-AE21-EB928A040F42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeriesDescription"
+              DTS:DTSID="{E41296E0-F081-4591-B6EA-50739C16679C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GeoAreaCode"
+              DTS:DTSID="{D5E9A9B6-5DB9-4B44-A921-09C57FAA8677}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GeoAreaName"
+              DTS:DTSID="{2B137C84-95EA-4D26-A488-9E584E089B47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nature"
+              DTS:DTSID="{DFA07984-07A0-4438-A016-8D5B856CF0CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reporting Type"
+              DTS:DTSID="{4D8B1B2D-76E9-454B-BC01-6F322EABE9B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units"
+              DTS:DTSID="{11A1E401-8A6E-46FA-98B1-9BF2DD5CEE8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2000"
+              DTS:DTSID="{382EF612-04FE-4B63-B4BE-CBBC7D57FB48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2010"
+              DTS:DTSID="{E8893AEA-9A26-457E-8B9F-88D7C29E4B72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2015"
+              DTS:DTSID="{99F0E2B7-4F16-42AF-8BD5-04993F50D69C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2016"
+              DTS:DTSID="{28A47E09-40EF-46CE-A33E-2B892CE072F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2017"
+              DTS:DTSID="{EFECF940-6BE6-4260-A3A0-9ACEB6D12B07}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2018"
+              DTS:DTSID="{AECF65AF-85EE-4210-891D-6A6B2FB08E3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2019"
+              DTS:DTSID="{F1452BED-3A3B-4A27-943C-63219B069E0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2020"
+              DTS:DTSID="{B35A2259-98E3-4A5C-B138-F0249BB1BEED}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{122D18D4-27F8-4F80-BAA7-811D4C7F744F}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\19498\Downloads\Forrest and its effects\forrest.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Goal"
+              DTS:DTSID="{AC63296B-70AA-4BEE-A8E6-63B5B4EAF0A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Target"
+              DTS:DTSID="{B591309D-19E7-4B71-B4B7-4B08422391D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Indicator"
+              DTS:DTSID="{81CDB820-9F31-474A-BE53-F72753918419}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeriesCode"
+              DTS:DTSID="{1A4A04BB-A16A-4DC9-818A-ADE5F70EF384}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeriesDescription"
+              DTS:DTSID="{FAAC5879-EF31-43DC-8DAE-A2CC6ECDAE23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GeoAreaCode"
+              DTS:DTSID="{810CEEB5-2218-4A02-A5F7-25E6410206E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GeoAreaName"
+              DTS:DTSID="{934222DC-5521-4137-A491-4CCBC0B71C0B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nature"
+              DTS:DTSID="{4D36E0AC-742F-42D2-A9EC-4CCD8CB566F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reporting Type"
+              DTS:DTSID="{F2EF61EB-AF27-47A5-9525-5E015ACFEE2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units"
+              DTS:DTSID="{361C8093-6610-4DE9-AB07-735F46E812A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2000"
+              DTS:DTSID="{587D3362-4BB6-449D-A50F-6CFFDC7C604D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2010"
+              DTS:DTSID="{0E1F0F04-896A-45F4-BEAB-DB0F444A1FC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2015"
+              DTS:DTSID="{74B5B46D-A4C1-4EED-B362-A8EFB2D98081}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2016"
+              DTS:DTSID="{3F84FF01-93BC-4C78-95EF-F6E1057138A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2017"
+              DTS:DTSID="{0638EC93-D106-4ABE-9506-16E117BD8A65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2018"
+              DTS:DTSID="{6B5E1876-8302-4581-988B-ECA660DF9232}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2019"
+              DTS:DTSID="{17757CB2-C359-40DC-BFD5-94A54FA0DDFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2020"
+              DTS:DTSID="{9761ED67-F62E-44E2-A6BA-5E34E84F2733}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Forrest]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{ED559180-1F4E-4603-9171-59652BD0E2B7}"
+      DTS:ObjectName="Forrest">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\19498\Downloads\Forrest and its effects\forrest.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Goal"
+              DTS:DTSID="{C1815AEC-CEEE-4B76-AA3E-F257FC1B4923}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Target"
+              DTS:DTSID="{9D0B158E-4A32-446D-B18C-54B4E6649336}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Indicator"
+              DTS:DTSID="{C1387598-963E-4572-8841-FB84FBD8A50C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeriesCode"
+              DTS:DTSID="{5F8C8B90-585E-42BD-8746-FC636D211C38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeriesDescription"
+              DTS:DTSID="{15F99921-F452-4918-8B51-6EF5C30361B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GeoAreaCode"
+              DTS:DTSID="{D02EBC18-77DF-4E68-8372-FF517CB21214}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GeoAreaName"
+              DTS:DTSID="{C1ED43E2-B4C7-47DC-AB90-81A4D336E434}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nature"
+              DTS:DTSID="{E20E4953-8A3F-477B-B79C-A71EBA0E6856}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reporting Type"
+              DTS:DTSID="{95588575-5646-4CD7-B5ED-B93FA366219A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units"
+              DTS:DTSID="{4A1AF6FB-DB0E-449A-8129-AED05E75AF2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2000"
+              DTS:DTSID="{7D6926FC-2EFF-4488-A307-9F7355F2E96F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2010"
+              DTS:DTSID="{3A890A45-16B4-4D0D-A075-9873D3AACE9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2015"
+              DTS:DTSID="{2BE74B5A-7030-499C-91ED-B5880E84772B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2016"
+              DTS:DTSID="{350E2386-8E8D-414C-ACC5-83F4C82ABE35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2017"
+              DTS:DTSID="{C350C6F3-E7B4-47C0-8861-D6E9292782E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2018"
+              DTS:DTSID="{D3F5AA04-F0F8-4EDF-B2FC-FC0F509A760E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2019"
+              DTS:DTSID="{9A079BAD-FC2B-4BB8-8ACF-DA90766A37F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2020"
+              DTS:DTSID="{AAEED011-F980-4BBA-968E-813623069F11}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{0419D7A1-9471-43B9-9859-767DFDE75C27}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - Forrest"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Forrest"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[RP_Forrest]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - Forrest.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[Goal]"
+                      cachedDataType="numeric"
+                      cachedName="Goal"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Goal]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Goal]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[Target]"
+                      cachedDataType="numeric"
+                      cachedName="Target"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Target]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Target]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[Indicator]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Indicator"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Indicator]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Indicator]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[SeriesCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SeriesCode"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[SeriesCode]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[SeriesCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[SeriesDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SeriesDescription"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[SeriesDescription]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[SeriesDescription]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[GeoAreaCode]"
+                      cachedDataType="numeric"
+                      cachedName="GeoAreaCode"
+                      cachedPrecision="18"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[GeoAreaCode]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[GeoAreaCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[GeoAreaName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="GeoAreaName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[GeoAreaName]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[GeoAreaName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[Nature]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Nature"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Nature]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Nature]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[Units]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Units"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Units]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Units]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[Reporting Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Reporting Type"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Reporting Type]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Reporting Type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2000]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2000"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2000]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2000]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2010]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2010"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2010]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2010]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2015]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2015"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2015]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2015]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2016]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2016"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2016]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2016]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2017]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2017"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2017]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2017]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2018]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2018"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2018]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2018]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2019]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2019"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2019]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2019]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].Columns[2020]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="2020"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2020]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2020]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Goal]"
+                      dataType="numeric"
+                      name="Goal"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Target]"
+                      dataType="r4"
+                      name="Target" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Indicator]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Indicator" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[SeriesCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="SeriesCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[SeriesDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SeriesDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[GeoAreaCode]"
+                      dataType="numeric"
+                      name="GeoAreaCode"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[GeoAreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="GeoAreaName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Nature]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Nature" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[Reporting Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Reporting Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2000]"
+                      dataType="r4"
+                      name="2000" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2010]"
+                      dataType="r4"
+                      name="2010" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2015]"
+                      dataType="r4"
+                      name="2015" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2016]"
+                      dataType="r4"
+                      name="2016" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2017]"
+                      dataType="r4"
+                      name="2017" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2018]"
+                      dataType="r4"
+                      name="2018" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2019]"
+                      dataType="r4"
+                      name="2019" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input].ExternalColumns[2020]"
+                      dataType="r4"
+                      name="2020" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - Forrest.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Forrest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Forrest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Forrest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Forrest csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Forrest csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Forrest csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Forrest]"
+                  connectionManagerRefId="Package.ConnectionManagers[Forrest]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Goal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Goal]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Goal]"
+                      name="Goal"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Target]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Target]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Target]"
+                      name="Target"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Indicator]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Indicator]"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Indicator]"
+                      name="Indicator"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[SeriesCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[SeriesCode]"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[SeriesCode]"
+                      name="SeriesCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[SeriesDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[SeriesDescription]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[SeriesDescription]"
+                      name="SeriesDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[GeoAreaCode]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[GeoAreaCode]"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[GeoAreaCode]"
+                      name="GeoAreaCode"
+                      precision="18"
+                      scale="1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[GeoAreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[GeoAreaName]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[GeoAreaName]"
+                      name="GeoAreaName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Nature]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Nature]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Nature]"
+                      name="Nature"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Reporting Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Reporting Type]"
+                      length="30"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Reporting Type]"
+                      name="Reporting Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Units]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[Units]"
+                      name="Units"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2000]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2000]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2000]"
+                      name="2000"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2010]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2010]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2010]"
+                      name="2010"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2015]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2015]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2015]"
+                      name="2015"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2016]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2016]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2016]"
+                      name="2016"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2017]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2017]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2017]"
+                      name="2017"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2018]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2018]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2018]"
+                      name="2018"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2019]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2019]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2019]"
+                      name="2019"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2020]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2020]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].Columns[2020]"
+                      name="2020"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Goal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Goal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Target]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Target" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Indicator]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Indicator" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[SeriesCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SeriesCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[SeriesDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SeriesDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[GeoAreaCode]"
+                      dataType="numeric"
+                      name="GeoAreaCode"
+                      precision="18"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[GeoAreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="GeoAreaName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Nature]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Nature" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Reporting Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Reporting Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2000]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2000" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2010]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2010" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2015]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2015" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2016]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2016" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2017]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2017" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2018]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2018" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2019]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2019" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output].ExternalColumns[2020]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="2020" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - Forrest.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Forrest csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop table(s) SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{48EB2E3D-99BD-49B1-B153-6FD5FF2B3C56}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop table(s) SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C5682E7F-CE7E-494A-ACB7-EA909CF7F3F9}"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID('[TMSForrestHuman].[dbo].[RP_Forrest]') AND type IN ('U'))&#xA;DROP TABLE [TMSForrestHuman].[dbo].[RP_Forrest] &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{A789A0DC-99BF-40A1-9296-0412627E5A95}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C5682E7F-CE7E-494A-ACB7-EA909CF7F3F9}"
+          SQLTask:SqlStatementSource="&#xA;CREATE TABLE [TmsForrestHuman].[dbo].[RP_Forrest]&#xA;([Goal] numeric(18, 2), &#xA;[Target] numeric(18,2), &#xA;[Indicator] varchar(10), &#xA;[SeriesCode] varchar(25), &#xA;[SeriesDescription] varchar(50), &#xA;[GeoAreaCode] numeric(18,1), &#xA;[GeoAreaName] nvarchar(255), &#xA;[Nature] nvarchar(255), &#xA;[Reporting Type] varchar(30), &#xA;[Units] nvarchar(255), &#xA;[2000] nvarchar(255), &#xA;[2010] nvarchar(255), &#xA;[2015] nvarchar(255), &#xA;[2016] nvarchar(255), &#xA;[2017] nvarchar(255), &#xA;[2018] nvarchar(255), &#xA;[2019] nvarchar(255), &#xA;[2020] nvarchar(255)) &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{50B9D68B-7AE0-452A-8D9F-0DC50630B6E7\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{50B9D68B-7AE0-452A-8D9F-0DC50630B6E7}"
+      DTS:From="Package\Drop table(s) SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{50B9D68B-7AE0-452A-8D9F-0DC50630B6E7}"
+      DTS:To="Package\Preparation SQL Task 1"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{8E58A7DA-52A1-46AD-848B-560486D232E5\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{8E58A7DA-52A1-46AD-848B-560486D232E5}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{8E58A7DA-52A1-46AD-848B-560486D232E5}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task 1"
+          TopLeft="24.5,210.833333333334" />
+        <NodeLayout
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\Drop table(s) SQL Task 1"
+          TopLeft="5.50000000000001,5.50000000000004" />
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="9.16666666666669,108.166666666667" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{8E58A7DA-52A1-46AD-848B-560486D232E5\}]"
+          TopLeft="105.833333333333,150.833333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000003"
+              Start="0,0"
+              End="0,52.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{50B9D68B-7AE0-452A-8D9F-0DC50630B6E7\}]"
+          TopLeft="105.833333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000003"
+              Start="0,0"
+              End="0,52.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,20.4453125000002,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Data Flow Task 1\Forrest csv"
+          TopLeft="19.37499971129,15.0526318622758" />
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Data Flow Task 1\Destination - Forrest"
+          TopLeft="6.83333333333334,108.166666666667" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="85.37499971129,57.7192985289425">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.45833362204334,50.4473681377243"
+              Start="0,0"
+              End="9.45833362204334,42.9473681377243">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2236840688621" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.2236840688621"
+                    Point2="0,25.2236840688621"
+                    Point3="4,25.2236840688621" />
+                  <mssgle:LineSegment
+                    End="5.45833362204334,25.2236840688621" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.45833362204334,25.2236840688621"
+                    Point2="9.45833362204334,25.2236840688621"
+                    Point3="9.45833362204334,29.2236840688621" />
+                  <mssgle:LineSegment
+                    End="9.45833362204334,42.9473681377243" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - Forrest">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
