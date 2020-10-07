@@ -8,6 +8,8 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
+        <ServerName>DESKTOP-M7Q49F6\MSSQL</ServerName>
+        <PathOnServer />
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
