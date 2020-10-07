@@ -1,0 +1,27 @@
+IF EXISTS(SELECT * FROM sys.objects WHERE object_id=OBJECT_ID('dbo.RP_Forrest')
+AND type in ('U'))
+
+DROP TABLE dbo.RP_Forrest;
+
+CREATE TABLE RP_FORREST
+(
+Goal NUMERIC(5),
+Target	FLOAT,
+Indicator	VARCHAR(10),
+SeriesCode	VARCHAR(25),
+SeriesDescription VARCHAR(50),
+GeoAreaCode	NUMERIC(5),
+GeoAreaName	VARCHAR(25),
+Nature	VARCHAR(30),
+ReportingType	VARCHAR(30),
+Units	VARCHAR(10),
+YR_2000	FLOAT(25),
+YR_2010	FLOAT(25),
+YR_2015	FLOAT(25),
+YR_2016	FLOAT(25),
+YR_2017	FLOAT(25),
+YR_2018	FLOAT(25),
+YR_2019	FLOAT(25),
+YR_2020 FLOAT(25)
+
+);
