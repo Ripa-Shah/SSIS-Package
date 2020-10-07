@@ -1,0 +1,53 @@
+USE TmsForrestHuman;
+GO
+
+CREATE PROCEDURE dbo.PopulateTempTable
+AS
+BEGIN
+    
+    SET NOCOUNT ON;
+
+    IF OBJECT_ID('[TmsForrestHuman].[dbo].[RP_Forrestandco2emission]') IS NOT NULL
+        DROP view  [TmsForrestHuman].[dbo].[RP_Forrestandco2emission];
+
+    CREATE view RP_Forrestandco2emission
+AS
+   select 
+    [AlphaCode],
+    [2020],
+    [2019],
+    [2018],
+    [2017],
+    [2016],
+    [2015],
+    [Units],
+    [2000],
+    [2010],
+    [Reporting Type],
+    [Nature],
+    [GeoAreaName],
+    [GeoAreaCode],
+    [SeriesDescription],
+    [Goal],
+    [country],
+    [year],
+    [co2],
+    [co2_growth_prct],
+    [co2_growth_abs],
+    [consumption_co2],
+    [cement_co2],
+    [coal_co2],
+    [flaring_co2],
+    [gas_co2],
+    [oil_co2],
+    [total_ghg],
+    [nitrous_oxide],
+    [primary_energy_consumption],
+    [population],
+    [gdp] varchar(50)
+FROM RP_Forrest f JOIN RP_co2emission c 
+ON f.AlphaCode=c.iso_code
+
+  
+END
+GO
