@@ -9,7 +9,7 @@
         <WinAuthUserName />
         <WinAuthDomain />
         <ServerName>DESKTOP-M7Q49F6\MSSQL</ServerName>
-        <PathOnServer>/SSISDB/LoadMultipleCommaDelimitedFile/BulkInsert</PathOnServer>
+        <PathOnServer>/SSISDB/LoadMultipleCommaDelimitedFile/ExpressionTask</PathOnServer>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
