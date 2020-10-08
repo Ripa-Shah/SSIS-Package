@@ -1,0 +1,2 @@
+@[User::EmailBody]="Hello,\n\n"  
++"The  @[System::PackageName] has been executed successfully on"+ (DT_STR,30,1252) @[System::CreationDate] +" It extracted (DT_STR,10,1252)@[User::Var_LoadedCnt] rows in this execution."
