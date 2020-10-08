@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS_Project</Name>
-    <LastWriteTime>2020-10-07T22:29:39.5543095Z</LastWriteTime>
+    <LastWriteTime>2020-10-07T23:05:06.3019436Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -28,7 +28,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>BulkInsert3.dtsx</Name>
-      <LastWriteTime>2020-10-07T22:30:25.6810768Z</LastWriteTime>
+      <LastWriteTime>2020-10-07T22:32:40.8845023Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ExpressionTask.dtsx</Name>
+      <LastWriteTime>2020-10-07T23:05:06.2839569Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
