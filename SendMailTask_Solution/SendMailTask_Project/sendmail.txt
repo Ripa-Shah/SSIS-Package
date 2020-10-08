@@ -1,0 +1,30 @@
+ string SendMailFrom = Dts.Variables["EmailFrom"].Value.ToString();
+            string SendMailTo = Dts.Variables["EmailTo"].Value.ToString();
+            string SendMailSubject = Dts.Variables["EmailSubject"].Value.ToString();
+            string SendMailBody =  Dts.Variables["EmailBody"].Value.ToString();
+            try
+            {
+                MailMessage email = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                // START
+                email.From = new MailAddress(SendMailFrom);
+                email.To.Add(SendMailTo);
+                email.Subject = SendMailSubject;
+                email.Body = SendMailBody;
+                //END
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential(SendMailFrom, "Imp0rt21$");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(email);
+                System.Windows.Forms.MessageBox.Show("Email was Successfully Sent ");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            Dts.TaskResult = (int)ScriptResults.Success;
+
+
+        }
