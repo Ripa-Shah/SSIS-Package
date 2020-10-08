@@ -1,0 +1,3 @@
+CustomerName,Region,SaleAmt
+Aamir,AS,5000
+M Raza,AS,10000
