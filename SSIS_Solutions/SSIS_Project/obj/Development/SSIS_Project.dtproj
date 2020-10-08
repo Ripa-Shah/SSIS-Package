@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-M7Q49F6</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6ueAjARfnEiMR9SPYXaZagAAAAACAAAAAAAQZgAAAAEAACAAAADr3F4EDG1ZQvvXFft0p4bdqyeRZFNaz89WPzM0F8LvLAAAAAAOgAAAAAIAACAAAACndm8tXvvJld6G0XDWZJ75Y/08sED2L+QrGgo6Nh21mZAAAAAai1uaqC009MrJrc6r7joZK8REuNBYcRYQkc/lZXvQU2ddLkmqSm/GhIvXEc0UZTxmcm6RejybOg3jGOdG5HNI99gU5dhW9TfQzyT09WiB+pkgKnxov+AkzOoDYpnE3fQvhtPYRkApeQ9lG+42fjrRuv860Za3rTgI0udgJujVg++YPzPadyXJ3znPw2o/aThAAAAAjzlSfFawbUzVQ5IUm6DYF/HB78nYctpRCbUnSW73A6ASG/7t3bO4AEoWXBa7agseGJuW3lVYQuSi31TTDMBLIQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6ueAjARfnEiMR9SPYXaZagAAAAACAAAAAAAQZgAAAAEAACAAAAAgBs5YThwOy9KpIIbNcVJhBgEHW8uyz1kBbTeTOKCE2QAAAAAOgAAAAAIAACAAAACdx8kPP3qVXZFFu1bche+LBYU+gCGeqUHmt8bfACHLmZAAAAAfPyAL8I+9ssh0t/iB9iwm7S1Gm4yKV1/jTuN69vSH4Xfvj33Z9Rv6pR3IQUutzLQRdPqZy5F52WCcbyWGZIWtWSduSnHjz/KxX1D8oJxYcz/2HOMAQAtq8x1thjOcBoTMuheqgIAsyf6pioS3u+3w3SxwxdTSSsMic2zHMYX19s0kbRMREXK+QeuNwSCLJNdAAAAAdWyYMMQcaiT9Xohg4+ddWsO87hkLGEUFiKiKO0vE7EYCsMOf2/0UjAjllhat0Rbl0ZET+gK02e3yYflBAp3VpQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,6 +35,7 @@
           <SSIS:Package SSIS:Name="BulkInsert1.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="BulkInsert2.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="BulkInsert3.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ExpressionTask.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
@@ -1125,6 +1126,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ExpressionTask.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{516B6F1C-DB5E-4E0F-B9F5-2CD9AF06205A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0C5DBD0A-E2B7-44E9-A6B5-DB96834E04AD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
