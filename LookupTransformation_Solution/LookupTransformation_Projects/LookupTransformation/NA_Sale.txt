@@ -1,0 +1,2 @@
+CustomerName,Region,SaleAmt
+Sam,NA,15000
