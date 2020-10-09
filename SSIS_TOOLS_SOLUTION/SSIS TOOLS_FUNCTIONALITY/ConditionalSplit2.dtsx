@@ -1,0 +1,1383 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/8/2020 7:33:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:DTSID="{A1614BE6-58FF-458D-BBD5-EDD80D12B676}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{1FD9F654-D1C3-4846-B839-2C7B64D6D92E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0DFBAF45-0D81-4FE1-A61A-2D854F180C77}"
+      DTS:ObjectName="DESKTOP-M7Q49F6\MSSQL.TestDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=TestDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FADB245F-E551-4A4C-9BB3-9D449354A1B9}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\19498\Desktop\SQL\SSIS\CONDITIONAL SPLIT\indian_liver_patient.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{0C028D59-A5DA-4D58-92C6-8D22F858779E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{2EC01155-0D71-4683-83EF-C76CFEB21D88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Bilirubin"
+              DTS:DTSID="{F867822B-68B5-4323-88D9-0DA7FC644EF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Direct_Bilirubin"
+              DTS:DTSID="{3E27C83C-C291-48B4-8A41-2F44D886D76B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Alkaline_Phosphotase"
+              DTS:DTSID="{BC5685D5-A014-494C-9E0E-6C1B53F6E94E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Alamine_Aminotransferase"
+              DTS:DTSID="{0F7D8F0E-A871-4C60-AF68-A403797F4549}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Aspartate_Aminotransferase"
+              DTS:DTSID="{639C985E-9ADC-48B6-BFD9-61C10C71F822}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Protiens"
+              DTS:DTSID="{F541C788-7D2B-4410-A048-5F8FE1183CF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Albumin"
+              DTS:DTSID="{2A2617EF-D7A2-4C9C-8654-090F99FB4759}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Albumin_and_Globulin_Ratio"
+              DTS:DTSID="{E813D751-9587-4D1D-B702-B06E6C3C0C36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dataset"
+              DTS:DTSID="{028A92DB-0FCC-4C79-8224-0B47C77D6C9E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFW_LiverDisease"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{49ABBA02-AFAD-482E-B9A5-A801C8D5DA9E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFW_LiverDisease"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFW_LiverDisease\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFW_LiverDisease\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Conditional Split.Inputs[Conditional Split Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFW_LiverDisease\Conditional Split.Outputs[Liver Disease (Male)]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Liver Disease (Male)"
+                  synchronousInputId="Package\DFW_LiverDisease\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]} == "Male"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Gender == "Male"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFW_LiverDisease\Conditional Split.Outputs[Liver Disease (Female)]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Liver Disease (Female)"
+                  synchronousInputId="Package\DFW_LiverDisease\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]} == "Female"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Gender == "Female"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFW_LiverDisease\Conditional Split.Outputs[Other]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Other"
+                  synchronousInputId="Package\DFW_LiverDisease\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFW_LiverDisease\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFW_LiverDisease\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFW_LiverDisease\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFW_LiverDisease\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="50"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Bilirubin]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total_Bilirubin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Bilirubin]"
+                      name="Total_Bilirubin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Direct_Bilirubin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]"
+                      name="Direct_Bilirubin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Alkaline_Phosphotase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]"
+                      name="Alkaline_Phosphotase"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Alamine_Aminotransferase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]"
+                      name="Alamine_Aminotransferase"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Aspartate_Aminotransferase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]"
+                      name="Aspartate_Aminotransferase"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Protiens]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total_Protiens]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Protiens]"
+                      name="Total_Protiens"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Albumin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin]"
+                      name="Albumin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]"
+                      name="Albumin_and_Globulin_Ratio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Dataset]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dataset]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Dataset]"
+                      name="Dataset"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total_Bilirubin]"
+                      dataType="r4"
+                      name="Total_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Direct_Bilirubin]"
+                      dataType="r4"
+                      name="Direct_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Alkaline_Phosphotase]"
+                      dataType="r4"
+                      name="Alkaline_Phosphotase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Alamine_Aminotransferase]"
+                      dataType="r4"
+                      name="Alamine_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Aspartate_Aminotransferase]"
+                      dataType="r4"
+                      name="Aspartate_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total_Protiens]"
+                      dataType="r4"
+                      name="Total_Protiens" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Albumin]"
+                      dataType="r4"
+                      name="Albumin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      dataType="r4"
+                      name="Albumin_and_Globulin_Ratio" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dataset]"
+                      dataType="r4"
+                      name="Dataset" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFW_LiverDisease\Liver Disease Female"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Liver Disease Female"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[LiverDisease_Female]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFW_LiverDisease\Liver Disease Female.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Total_Bilirubin]"
+                      cachedDataType="r4"
+                      cachedName="Total_Bilirubin"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Total_Bilirubin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Direct_Bilirubin]"
+                      cachedDataType="r4"
+                      cachedName="Direct_Bilirubin"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Direct_Bilirubin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Alkaline_Phosphotase]"
+                      cachedDataType="r4"
+                      cachedName="Alkaline_Phosphotase"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Alkaline_Phosphotase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Alamine_Aminotransferase]"
+                      cachedDataType="r4"
+                      cachedName="Alamine_Aminotransferase"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Alamine_Aminotransferase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Aspartate_Aminotransferase]"
+                      cachedDataType="r4"
+                      cachedName="Aspartate_Aminotransferase"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Aspartate_Aminotransferase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Total_Protiens]"
+                      cachedDataType="r4"
+                      cachedName="Total_Protiens"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Total_Protiens]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Protiens]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Albumin]"
+                      cachedDataType="r4"
+                      cachedName="Albumin"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Albumin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Albumin_and_Globulin_Ratio]"
+                      cachedDataType="r4"
+                      cachedName="Albumin_and_Globulin_Ratio"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].Columns[Dataset]"
+                      cachedDataType="r4"
+                      cachedName="Dataset"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Dataset]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Dataset]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Total_Bilirubin]"
+                      dataType="r4"
+                      name="Total_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Direct_Bilirubin]"
+                      dataType="r4"
+                      name="Direct_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Alkaline_Phosphotase]"
+                      dataType="r4"
+                      name="Alkaline_Phosphotase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Alamine_Aminotransferase]"
+                      dataType="r4"
+                      name="Alamine_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Aspartate_Aminotransferase]"
+                      dataType="r4"
+                      name="Aspartate_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Total_Protiens]"
+                      dataType="r4"
+                      name="Total_Protiens" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Albumin]"
+                      dataType="r4"
+                      name="Albumin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      dataType="r4"
+                      name="Albumin_and_Globulin_Ratio" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input].ExternalColumns[Dataset]"
+                      dataType="r4"
+                      name="Dataset" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFW_LiverDisease\Liver Disease Female.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Liver Disease Female.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Female.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Liver Disease Female.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFW_LiverDisease\Liver Disease Male"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Liver Disease Male"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[LiverDisease_Male]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFW_LiverDisease\Liver Disease Male.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Total_Bilirubin]"
+                      cachedDataType="r4"
+                      cachedName="Total_Bilirubin"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Total_Bilirubin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Direct_Bilirubin]"
+                      cachedDataType="r4"
+                      cachedName="Direct_Bilirubin"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Direct_Bilirubin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Alkaline_Phosphotase]"
+                      cachedDataType="r4"
+                      cachedName="Alkaline_Phosphotase"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Alkaline_Phosphotase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Alamine_Aminotransferase]"
+                      cachedDataType="r4"
+                      cachedName="Alamine_Aminotransferase"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Alamine_Aminotransferase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Aspartate_Aminotransferase]"
+                      cachedDataType="r4"
+                      cachedName="Aspartate_Aminotransferase"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Aspartate_Aminotransferase]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Total_Protiens]"
+                      cachedDataType="r4"
+                      cachedName="Total_Protiens"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Total_Protiens]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Total_Protiens]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Albumin]"
+                      cachedDataType="r4"
+                      cachedName="Albumin"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Albumin]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Albumin_and_Globulin_Ratio]"
+                      cachedDataType="r4"
+                      cachedName="Albumin_and_Globulin_Ratio"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]" />
+                    <inputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].Columns[Dataset]"
+                      cachedDataType="r4"
+                      cachedName="Dataset"
+                      externalMetadataColumnId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Dataset]"
+                      lineageId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output].Columns[Dataset]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Total_Bilirubin]"
+                      dataType="r4"
+                      name="Total_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Direct_Bilirubin]"
+                      dataType="r4"
+                      name="Direct_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Alkaline_Phosphotase]"
+                      dataType="r4"
+                      name="Alkaline_Phosphotase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Alamine_Aminotransferase]"
+                      dataType="r4"
+                      name="Alamine_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Aspartate_Aminotransferase]"
+                      dataType="r4"
+                      name="Aspartate_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Total_Protiens]"
+                      dataType="r4"
+                      name="Total_Protiens" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Albumin]"
+                      dataType="r4"
+                      name="Albumin" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      dataType="r4"
+                      name="Albumin_and_Globulin_Ratio" />
+                    <externalMetadataColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input].ExternalColumns[Dataset]"
+                      dataType="r4"
+                      name="Dataset" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFW_LiverDisease\Liver Disease Male.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Liver Disease Male.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFW_LiverDisease\Liver Disease Male.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFW_LiverDisease\Liver Disease Male.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFW_LiverDisease\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\DFW_LiverDisease\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFW_LiverDisease\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFW_LiverDisease\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFW_LiverDisease\Multicast.Outputs[Multicast Output 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DFW_LiverDisease\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFW_LiverDisease\Multicast 1"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast 1">
+              <inputs>
+                <input
+                  refId="Package\DFW_LiverDisease\Multicast 1.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFW_LiverDisease\Multicast 1.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFW_LiverDisease\Multicast 1.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFW_LiverDisease\Multicast 1.Outputs[Multicast Output 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DFW_LiverDisease\Multicast 1.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFW_LiverDisease.Paths[Flat File Source Output]"
+              endId="Package\DFW_LiverDisease\Conditional Split.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\DFW_LiverDisease\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\DFW_LiverDisease.Paths[Liver Disease (Female)]"
+              endId="Package\DFW_LiverDisease\Multicast.Inputs[Multicast Input 1]"
+              name="Liver Disease (Female)"
+              startId="Package\DFW_LiverDisease\Conditional Split.Outputs[Liver Disease (Female)]" />
+            <path
+              refId="Package\DFW_LiverDisease.Paths[Liver Disease (Male)]"
+              endId="Package\DFW_LiverDisease\Multicast 1.Inputs[Multicast Input 1]"
+              name="Liver Disease (Male)"
+              startId="Package\DFW_LiverDisease\Conditional Split.Outputs[Liver Disease (Male)]" />
+            <path
+              refId="Package\DFW_LiverDisease.Paths[Multicast Output 1]"
+              endId="Package\DFW_LiverDisease\Liver Disease Female.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\DFW_LiverDisease\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DFW_LiverDisease.Paths[Multicast Output 11]"
+              endId="Package\DFW_LiverDisease\Liver Disease Male.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\DFW_LiverDisease\Multicast 1.Outputs[Multicast Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\DFW_LiverDisease"
+          TopLeft="105.624998426065,96.4736860264042" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFW_LiverDisease">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\DFW_LiverDisease\Conditional Split"
+          TopLeft="258.541666601474,134.850877695247" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\DFW_LiverDisease\Multicast"
+          TopLeft="103.749998454005,164.210529406645" />
+        <NodeLayout
+          Size="130.666666666667,42.6666666666667"
+          Id="Package\DFW_LiverDisease\Multicast 1"
+          TopLeft="374.999994412065,199.684214209586" />
+        <EdgeLayout
+          Id="Package\DFW_LiverDisease.Paths[Liver Disease (Female)]"
+          TopLeft="258.541666601474,156.18421102858">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.4583348141363,29.3596517113987"
+              Start="0,0"
+              End="-25.9583348141363,29.3596517113987">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-12.7291674070682,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.7291674070682,0"
+                    Point2="-16.7291674070682,0"
+                    Point3="-16.7291674070682,4" />
+                  <mssgle:LineSegment
+                    End="-16.7291674070682,25.3596517113987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.7291674070682,25.3596517113987"
+                    Point2="-16.7291674070682,29.3596517113987"
+                    Point3="-20.7291674070682,29.3596517113987" />
+                  <mssgle:LineSegment
+                    End="-25.9583348141363,29.3596517113987" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-67.3259056883182,-17.609375,101.1934765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFW_LiverDisease.Paths[Liver Disease (Male)]"
+          TopLeft="415.874999934808,156.18421102858">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.4583278105904,43.5000031810057"
+              Start="0,0"
+              End="24.4583278105904,36.0000031810057">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.4583278105904,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.4583278105904,0"
+                    Point2="24.4583278105904,0"
+                    Point3="24.4583278105904,4" />
+                  <mssgle:LineSegment
+                    End="24.4583278105904,36.0000031810057" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.5584104706596,-17.609375,90.0334765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\DFW_LiverDisease\Liver Disease Female"
+          TopLeft="121.874998183921,261.368425972244" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\DFW_LiverDisease\Flat File Source"
+          TopLeft="237.499996460974,49.719299018328" />
+        <EdgeLayout
+          Id="Package\DFW_LiverDisease.Paths[Flat File Source Output]"
+          TopLeft="314.833329794308,92.3859656849947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.3750034738333,42.4649120102519"
+              Start="0,0"
+              End="22.3750034738333,34.9649120102519">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2324560051259" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2324560051259"
+                    Point2="0,21.2324560051259"
+                    Point3="4,21.2324560051259" />
+                  <mssgle:LineSegment
+                    End="18.3750034738333,21.2324560051259" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.3750034738333,21.2324560051259"
+                    Point2="22.3750034738333,21.2324560051259"
+                    Point3="22.3750034738333,25.2324560051259" />
+                  <mssgle:LineSegment
+                    End="22.3750034738333,34.9649120102519" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFW_LiverDisease.Paths[Multicast Output 1]"
+          TopLeft="164.416665120671,206.877196073312">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.7916663965831,54.4912298989319"
+              Start="0,0"
+              End="48.7916663965831,46.9912298989319">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2456149494659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2456149494659"
+                    Point2="0,27.2456149494659"
+                    Point3="4,27.2456149494659" />
+                  <mssgle:LineSegment
+                    End="44.7916663965831,27.2456149494659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.7916663965831,27.2456149494659"
+                    Point2="48.7916663965831,27.2456149494659"
+                    Point3="48.7916663965831,31.2456149494659" />
+                  <mssgle:LineSegment
+                    End="48.7916663965831,46.9912298989319" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.3958331982916,32.2456149494659,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\DFW_LiverDisease\Liver Disease Male"
+          TopLeft="408.74999390915,269.350882099716" />
+        <EdgeLayout
+          Id="Package\DFW_LiverDisease.Paths[Multicast Output 11]"
+          TopLeft="440.333327745398,242.350880876252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.7499994970859,27.0000012234639"
+              Start="0,0"
+              End="53.7499994970859,19.5000012234639">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.50000061173193" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.50000061173193"
+                    Point2="0,13.5000006117319"
+                    Point3="4,13.5000006117319" />
+                  <mssgle:LineSegment
+                    End="49.7499994970859,13.5000006117319" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.7499994970859,13.5000006117319"
+                    Point2="53.7499994970859,13.5000006117319"
+                    Point3="53.7499994970859,17.5000006117319" />
+                  <mssgle:LineSegment
+                    End="53.7499994970859,19.5000012234639" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFW_LiverDisease\Liver Disease Female">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFW_LiverDisease\Liver Disease Male">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
