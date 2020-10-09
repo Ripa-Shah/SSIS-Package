@@ -1,0 +1,1359 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/9/2020 9:31:38 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:DTSID="{DCDB74DA-D214-4904-B01F-C101B4935E91}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Aggregate-Duplicate Records"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{6A447AC4-4E23-44EF-90DE-C6BF2774CED8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{96CD287B-A6D0-4954-B6AF-56D5F6ECE2EE}"
+      DTS:ObjectName="DESKTOP-M7Q49F6\MSSQL.TestDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=TestDB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B10CFB01-CF24-42FD-9D7C-235D78334C81}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\19498\Desktop\SQL\SSIS\CONDITIONAL SPLIT\indian_liver_patient.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{AD68EE0F-42BB-4EFF-95DE-3D820B7CA3BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{BC50560F-3223-408F-AFB2-348DB95D7CA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Bilirubin"
+              DTS:DTSID="{1B968363-D15D-4479-8733-FED7371F3D66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Direct_Bilirubin"
+              DTS:DTSID="{299462AC-99C3-40E8-9805-EB0088C64601}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Alkaline_Phosphotase"
+              DTS:DTSID="{ED2C41BB-6044-427F-AE78-EC9611132B93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Alamine_Aminotransferase"
+              DTS:DTSID="{56C8CF72-B58D-4825-8E8E-E3242FA83F99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Aspartate_Aminotransferase"
+              DTS:DTSID="{F03DC97C-4A87-4D9D-9EE5-02303266547E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Protiens"
+              DTS:DTSID="{7E2E1FCE-4F86-4B57-BEE2-2825535AA5AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Albumin"
+              DTS:DTSID="{741844E3-4441-4109-8094-9D58DA97F057}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Albumin_and_Globulin_Ratio"
+              DTS:DTSID="{5E3ECD34-3244-47A3-9924-F6FF05601E55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dataset"
+              DTS:DTSID="{E8406B82-2A79-4C7A-B458-F7A1C783C646}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_DuplicateRecords"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E1D4A7A5-3559-49FA-A203-9125FC3105B6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_DuplicateRecords"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_DuplicateRecords\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Total_Bilirubin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total_Bilirubin"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Direct_Bilirubin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Direct_Bilirubin"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Alkaline_Phosphotase]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Alkaline_Phosphotase"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Alamine_Aminotransferase]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Alamine_Aminotransferase"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Aspartate_Aminotransferase]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Aspartate_Aminotransferase"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Total_Protiens]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total_Protiens"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Protiens]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Albumin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Albumin"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Albumin_and_Globulin_Ratio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Albumin_and_Globulin_Ratio"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1].Columns[Dataset]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dataset"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Dataset]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Age]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Gender]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Total_Bilirubin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Total_Bilirubin]"
+                      name="Total_Bilirubin">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Bilirubin]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Direct_Bilirubin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Direct_Bilirubin]"
+                      name="Direct_Bilirubin">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Alkaline_Phosphotase]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Alkaline_Phosphotase]"
+                      name="Alkaline_Phosphotase">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Alamine_Aminotransferase]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Alamine_Aminotransferase]"
+                      name="Alamine_Aminotransferase">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Aspartate_Aminotransferase]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Aspartate_Aminotransferase]"
+                      name="Aspartate_Aminotransferase">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Total_Protiens]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Total_Protiens]"
+                      name="Total_Protiens">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Protiens]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Albumin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Albumin]"
+                      name="Albumin">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Albumin_and_Globulin_Ratio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Albumin_and_Globulin_Ratio]"
+                      name="Albumin_and_Globulin_Ratio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Dataset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Dataset]"
+                      name="Dataset">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Dataset]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Liver Disease Duplicate Records"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Bilirubin]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Total_Bilirubin]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Bilirubin]"
+                      name="Total_Bilirubin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Direct_Bilirubin]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Direct_Bilirubin]"
+                      name="Direct_Bilirubin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Alkaline_Phosphotase]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alkaline_Phosphotase]"
+                      name="Alkaline_Phosphotase"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Alamine_Aminotransferase]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Alamine_Aminotransferase]"
+                      name="Alamine_Aminotransferase"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Aspartate_Aminotransferase]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Aspartate_Aminotransferase]"
+                      name="Aspartate_Aminotransferase"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Protiens]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Total_Protiens]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Total_Protiens]"
+                      name="Total_Protiens"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Albumin]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin]"
+                      name="Albumin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Albumin_and_Globulin_Ratio]"
+                      name="Albumin_and_Globulin_Ratio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Dataset]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Dataset]"
+                      length="50"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].Columns[Dataset]"
+                      name="Dataset"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Total_Bilirubin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Direct_Bilirubin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Direct_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Alkaline_Phosphotase]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Alkaline_Phosphotase" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Alamine_Aminotransferase]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Alamine_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Aspartate_Aminotransferase]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Aspartate_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Total_Protiens]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total_Protiens" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Albumin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Albumin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Albumin_and_Globulin_Ratio" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output].ExternalColumns[Dataset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Dataset" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Liver Disease Unique Records"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[LiverDisease]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Total_Bilirubin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total_Bilirubin"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Total_Bilirubin]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Total_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Direct_Bilirubin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Direct_Bilirubin"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Direct_Bilirubin]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Direct_Bilirubin]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Alkaline_Phosphotase]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Alkaline_Phosphotase"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Alkaline_Phosphotase]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Alkaline_Phosphotase]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Alamine_Aminotransferase]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Alamine_Aminotransferase"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Alamine_Aminotransferase]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Alamine_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Aspartate_Aminotransferase]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Aspartate_Aminotransferase"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Aspartate_Aminotransferase]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Aspartate_Aminotransferase]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Total_Protiens]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total_Protiens"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Total_Protiens]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Total_Protiens]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Albumin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Albumin"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Albumin]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Albumin]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Albumin_and_Globulin_Ratio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Albumin_and_Globulin_Ratio"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Albumin_and_Globulin_Ratio]" />
+                    <inputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].Columns[Dataset]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dataset"
+                      externalMetadataColumnId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Dataset]"
+                      lineageId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1].Columns[Dataset]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Total_Bilirubin]"
+                      dataType="r4"
+                      name="Total_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Direct_Bilirubin]"
+                      dataType="r4"
+                      name="Direct_Bilirubin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Alkaline_Phosphotase]"
+                      dataType="r4"
+                      name="Alkaline_Phosphotase" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Alamine_Aminotransferase]"
+                      dataType="r4"
+                      name="Alamine_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Aspartate_Aminotransferase]"
+                      dataType="r4"
+                      name="Aspartate_Aminotransferase" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Total_Protiens]"
+                      dataType="r4"
+                      name="Total_Protiens" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Albumin]"
+                      dataType="r4"
+                      name="Albumin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Albumin_and_Globulin_Ratio]"
+                      dataType="r4"
+                      name="Albumin_and_Globulin_Ratio" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input].ExternalColumns[Dataset]"
+                      dataType="r4"
+                      name="Dataset" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_DuplicateRecords.Paths[Aggregate Output 1]"
+              endId="Package\DFT_DuplicateRecords\Liver Disease Unique Records.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\DFT_DuplicateRecords\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\DFT_DuplicateRecords.Paths[Flat File Source Output]"
+              endId="Package\DFT_DuplicateRecords\Aggregate.Inputs[Aggregate Input 1]"
+              name="Flat File Source Output"
+              startId="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="190.666666666667,42.6666666666667"
+          Id="Package\DFT_DuplicateRecords"
+          TopLeft="168.749997485429,82.1052647033227" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_DuplicateRecords">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="234.666666666667,42.6666666666667"
+          Id="Package\DFT_DuplicateRecords\Liver Disease Duplicate Records"
+          TopLeft="263.124996079132,45.1578955868275" />
+        <NodeLayout
+          Size="224,42.6666666666667"
+          Id="Package\DFT_DuplicateRecords\Liver Disease Unique Records"
+          TopLeft="233.749996516854,265.47368920741" />
+        <NodeLayout
+          Size="129.333333333334,42.6666666666667"
+          Id="Package\DFT_DuplicateRecords\Aggregate"
+          TopLeft="206.874996917322,163.9824585744" />
+        <EdgeLayout
+          Id="Package\DFT_DuplicateRecords.Paths[Flat File Source Output]"
+          TopLeft="380.458329412465,87.8245622534941">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-108.916665828476,76.1578963209058"
+              Start="0,0"
+              End="-108.916665828476,68.6578963209058">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0789481604529" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.0789481604529"
+                    Point2="0,38.0789481604529"
+                    Point3="-4,38.0789481604529" />
+                  <mssgle:LineSegment
+                    End="-104.916665828476,38.0789481604529" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-104.916665828476,38.0789481604529"
+                    Point2="-108.916665828476,38.0789481604529"
+                    Point3="-108.916665828476,42.0789481604529" />
+                  <mssgle:LineSegment
+                    End="-108.916665828476,68.6578963209058" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_DuplicateRecords.Paths[Aggregate Output 1]"
+          TopLeft="271.541663583989,206.649125241067">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.2083329328646,58.8245639663434"
+              Start="0,0"
+              End="74.2083329328646,51.3245639663434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.4122819831717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.4122819831717"
+                    Point2="0,29.4122819831717"
+                    Point3="4,29.4122819831717" />
+                  <mssgle:LineSegment
+                    End="70.2083329328646,29.4122819831717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.2083329328646,29.4122819831717"
+                    Point2="74.2083329328646,29.4122819831717"
+                    Point3="74.2083329328646,33.4122819831717" />
+                  <mssgle:LineSegment
+                    End="74.2083329328646,51.3245639663434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_DuplicateRecords\Liver Disease Unique Records">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
