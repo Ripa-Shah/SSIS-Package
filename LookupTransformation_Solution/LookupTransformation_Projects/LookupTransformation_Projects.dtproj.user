@@ -9,7 +9,7 @@
         <WinAuthUserName />
         <WinAuthDomain />
         <ServerName>DESKTOP-M7Q49F6\MSSQL</ServerName>
-        <PathOnServer>/SSISDB/LoadMultipleCommaDelimitedFile/SendMail</PathOnServer>
+        <PathOnServer>/SSISDB/LoadMultipleCommaDelimitedFile/Lookup</PathOnServer>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
