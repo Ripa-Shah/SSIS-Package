@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LookupwithdynamicParameterStoredProcedure"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{7385975C-E2F2-4503-B625-F23247AB8669}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{7CDD3BEC-310C-4D51-8B57-A6AFE555E0E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -842,7 +842,7 @@ where [refTable].[customername] = ? and [refTable].[Region] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-137.802497829861,29.4954128440367,96.3827734375,11.609375"
+              BoundingBox="-146.671150173611,29.4954128440367,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -865,7 +865,9 @@ where [refTable].[customername] = ? and [refTable].[Region] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.2500000000001,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -887,7 +889,9 @@ where [refTable].[customername] = ? and [refTable].[Region] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.2500000000001,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -921,7 +925,9 @@ where [refTable].[customername] = ? and [refTable].[Region] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-14,35.0000000000001,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -956,7 +962,7 @@ where [refTable].[customername] = ? and [refTable].[Region] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-64.6952756076388,29.4954128440367,111.6127734375,11.609375"
+              BoundingBox="-73.5639279513888,29.4954128440367,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
