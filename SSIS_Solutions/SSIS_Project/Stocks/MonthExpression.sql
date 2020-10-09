@@ -1,0 +1,11 @@
+MONTH(getdate()) == 1?"Jan":
+MONTH(getdate()) == 2?"Feb":
+MONTH(getdate()) == 3?"Mar":
+MONTH(getdate()) == 4?"Apr":
+MONTH(getdate()) == 5?"May":
+MONTH(getdate()) == 6?"June":
+MONTH(getdate()) == 7?"Jul":
+MONTH(getdate()) == 8?"Aug":
+MONTH(getdate()) == 9?"Sept":
+MONTH(getdate()) == 10?"Oct":
+MONTH(getdate()) == 11?"Nov":"Dec"
