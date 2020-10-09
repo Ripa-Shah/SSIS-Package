@@ -1,0 +1,2260 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/8/2020 4:03:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:DTSID="{858C42EE-3187-4845-82C9-FC9D4257C635}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LookupTransformation"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{D6914837-E3A0-4769-827F-DB70FCF16445}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E245B4F9-E03F-404A-89FA-1BCC01E772F7}"
+      DTS:ObjectName="DESKTOP-M7Q49F6\MSSQL.TestDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=TestDB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Inner Join Demo"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{473A70B4-0C86-4410-AC05-FF446FA4470A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Inner Join Demo"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Inner Join Demo\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">2</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[President]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="President"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[President]" />
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Party]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Party"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Party]" />
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Home_State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Home_State"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Home_State]" />
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Took_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Took_office"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Took_office]" />
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Left_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Left_office"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Left_office]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Right Input].Columns[President]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="President"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[President]" />
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Right Input].Columns[Party]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Party"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[Party]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[President]"
+                      name="President"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[President]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Party]"
+                      name="Party"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Party]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Home_State]"
+                      name="Home_State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Home_State]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Took_office]"
+                      name="Took_office">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Took_office]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output].Columns[Left_office]"
+                      name="Left_office">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input].Columns[Left_office]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Inner Join Demo\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\DFT_Inner Join Demo\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Inner Join Demo\Multicast.Outputs[Multicast Output 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFT_Inner Join Demo\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Inner Join Demo\President Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="President Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[USPresident]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Inner Join Demo\President Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Presidency]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Presidency]"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Presidency]"
+                      name="Presidency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[President]"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[President]"
+                      name="President"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Party]"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]"
+                      name="Party"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Home_State]"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Home_State]"
+                      name="Home_State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Took_office]"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]"
+                      name="Took_office"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Wikipedia_Entry]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Wikipedia_Entry]"
+                      length="300"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Wikipedia_Entry]"
+                      name="Wikipedia_Entry"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Left_office]"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]"
+                      name="Left_office"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Portrait]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Portrait]"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Portrait]"
+                      name="Portrait"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Thumbnail]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Thumbnail]"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Thumbnail]"
+                      name="Thumbnail"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Presidency]"
+                      dataType="i4"
+                      name="Presidency" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="President" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Wikipedia_Entry]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      name="Wikipedia_Entry" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Took_office" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Left_office" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Party" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Portrait]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Portrait" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Thumbnail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Thumbnail" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Home_State" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Presidency]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Presidency]"
+                      name="Presidency" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[President]"
+                      name="President" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Party]"
+                      name="Party" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Home_State]"
+                      name="Home_State" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Took_office]"
+                      name="Took_office" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Wikipedia_Entry]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Wikipedia_Entry]"
+                      name="Wikipedia_Entry" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Left_office]"
+                      name="Left_office" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Portrait]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Portrait]"
+                      name="Portrait" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Thumbnail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Thumbnail]"
+                      name="Thumbnail" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Inner Join Demo\President_Lookup Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="President_Lookup Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[USPresident_Lookup]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Inner Join Demo\President_Lookup Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[President]"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[President]"
+                      name="President"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[Took_office]"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Took_office]"
+                      name="Took_office"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[Left_office]"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Left_office]"
+                      name="Left_office"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[Party]"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Party]"
+                      name="Party"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="President" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Took_office" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Left_office" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].ExternalColumns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Party" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[President]"
+                      name="President" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[Took_office]"
+                      name="Took_office" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[Left_office]"
+                      name="Left_office" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[Party]"
+                      name="Party" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Inner Join Demo\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Presidency]"
+                      cachedDataType="i4"
+                      cachedName="Presidency"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Presidency]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[President]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="President"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[President]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Party]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Party"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Home_State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Home_State"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Home_State]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Took_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Took_office"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Wikipedia_Entry]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="300"
+                      cachedName="Wikipedia_Entry"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Wikipedia_Entry]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Left_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Left_office"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Portrait]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Portrait"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Portrait]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input].Columns[Thumbnail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Thumbnail"
+                      lineageId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Thumbnail]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Presidency]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Presidency]"
+                      name="Presidency">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Presidency]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[President]"
+                      name="President"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[President]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Party]"
+                      name="Party"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Home_State]"
+                      name="Home_State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Home_State]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Took_office]"
+                      name="Took_office">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Wikipedia_Entry]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Wikipedia_Entry]"
+                      name="Wikipedia_Entry">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Wikipedia_Entry]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Left_office]"
+                      name="Left_office">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Portrait]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Portrait]"
+                      name="Portrait">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Portrait]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Thumbnail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output].Columns[Thumbnail]"
+                      name="Thumbnail">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output].Columns[Thumbnail]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Inner Join Demo\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Inner Join Demo\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Inputs[Sort Input].Columns[President]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="President"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[President]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Inputs[Sort Input].Columns[Took_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Took_office"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Took_office]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Inputs[Sort Input].Columns[Left_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Left_office"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Left_office]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Inputs[Sort Input].Columns[Party]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Party"
+                      lineageId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Party]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[President]"
+                      name="President"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[President]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[Took_office]"
+                      name="Took_office">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Took_office]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[Left_office]"
+                      name="Left_office">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Left_office]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output].Columns[Party]"
+                      name="Party"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output].Columns[Party]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Inner Join Demo.Paths[Merge Join Output]"
+              endId="Package\DFT_Inner Join Demo\Multicast.Inputs[Multicast Input 1]"
+              name="Merge Join Output"
+              startId="Package\DFT_Inner Join Demo\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DFT_Inner Join Demo.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Inner Join Demo\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Inner Join Demo\President Table.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Inner Join Demo.Paths[OLE DB Source Output1]"
+              endId="Package\DFT_Inner Join Demo\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Inner Join Demo\President_Lookup Table.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Inner Join Demo.Paths[Sort Output]"
+              endId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DFT_Inner Join Demo\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT_Inner Join Demo.Paths[Sort Output1]"
+              endId="Package\DFT_Inner Join Demo\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DFT_Inner Join Demo\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Lookup Demo"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{296262E9-A7C9-4472-ABB8-37C9D8C6FF46}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Lookup Demo"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Lookup Demo\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[USPresident_Lookup]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[USPresident_Lookup]) [refTable]
+where [refTable].[President] = ? and [refTable].[Party] = ? and [refTable].[Took_office] = ? and [refTable].[Left_office] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="President" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Took_office" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Left_office" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Party" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[President]};#{Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]};#{Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]};#{Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Lookup Demo\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input].Columns[President]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="President"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[President]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">President</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">President</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input].Columns[Party]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Party"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Party</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Party</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input].Columns[Took_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Took_office"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Took_office</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Took_office</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input].Columns[Left_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Left_office"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Left_office</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Left_office</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Lookup Demo\Match Output"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Match Output">
+              <inputs>
+                <input
+                  refId="Package\DFT_Lookup Demo\Match Output.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Lookup Demo\Match Output.Outputs[Multicast Output 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFT_Lookup Demo\Match Output.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Lookup Demo\No Match Output"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="No Match Output">
+              <inputs>
+                <input
+                  refId="Package\DFT_Lookup Demo\No Match Output.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Lookup Demo\No Match Output.Outputs[Multicast Output 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFT_Lookup Demo\No Match Output.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Lookup Demo\President Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="President Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[USPresident]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Lookup Demo\President Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.TestDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Presidency]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Presidency]"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Presidency]"
+                      name="Presidency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[President]"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[President]"
+                      name="President"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Party]"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Party]"
+                      name="Party"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Home_State]"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Home_State]"
+                      name="Home_State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Took_office]"
+                      length="200"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Took_office]"
+                      name="Took_office"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Wikipedia_Entry]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Wikipedia_Entry]"
+                      length="300"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Wikipedia_Entry]"
+                      name="Wikipedia_Entry"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Left_office]"
+                      length="200"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Left_office]"
+                      name="Left_office"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Portrait]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Portrait]"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Portrait]"
+                      name="Portrait"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Thumbnail]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Thumbnail]"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].Columns[Thumbnail]"
+                      name="Thumbnail"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Presidency]"
+                      dataType="i4"
+                      name="Presidency" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="President" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Wikipedia_Entry]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      name="Wikipedia_Entry" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Took_office" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Left_office" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Party" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Portrait]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Portrait" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Thumbnail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Thumbnail" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output].ExternalColumns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Home_State" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Presidency]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Presidency]"
+                      name="Presidency" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[President]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[President]"
+                      name="President" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Party]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Party]"
+                      name="Party" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Home_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Home_State]"
+                      name="Home_State" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Took_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Took_office]"
+                      name="Took_office" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Wikipedia_Entry]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Wikipedia_Entry]"
+                      name="Wikipedia_Entry" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Left_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Left_office]"
+                      name="Left_office" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Portrait]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Portrait]"
+                      name="Portrait" />
+                    <outputColumn
+                      refId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Thumbnail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Error Output].Columns[Thumbnail]"
+                      name="Thumbnail" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Lookup Demo.Paths[Lookup Match Output]"
+              endId="Package\DFT_Lookup Demo\Match Output.Inputs[Multicast Input 1]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Lookup Demo.Paths[Lookup No Match Output]"
+              endId="Package\DFT_Lookup Demo\No Match Output.Inputs[Multicast Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\DFT_Lookup Demo\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT_Lookup Demo.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Lookup Demo\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Lookup Demo\President Table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\DFT_Inner Join Demo"
+          TopLeft="111.874998332933,68.4210539194356" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\DFT_Lookup Demo"
+          TopLeft="363.749994579703,60.8947379882976" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Inner Join Demo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\DFT_Inner Join Demo\President Table"
+          TopLeft="5.49999999999999,5.50000000000004" />
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\DFT_Inner Join Demo\Sort"
+          TopLeft="5.50000000000001,108.166666666667" />
+        <EdgeLayout
+          Id="Package\DFT_Inner Join Demo.Paths[OLE DB Source Output]"
+          TopLeft="102.833333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\DFT_Inner Join Demo\President_Lookup Table"
+          TopLeft="260.5,5.50000000000004" />
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\DFT_Inner Join Demo\Sort 1"
+          TopLeft="260.5,108.166666666667" />
+        <EdgeLayout
+          Id="Package\DFT_Inner Join Demo.Paths[OLE DB Source Output1]"
+          TopLeft="357.833333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\DFT_Inner Join Demo\Merge Join"
+          TopLeft="260.5,210.833333333334" />
+        <EdgeLayout
+          Id="Package\DFT_Inner Join Demo.Paths[Sort Output]"
+          TopLeft="102.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="203,60.0000000000001"
+              Start="0,0"
+              End="203,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5688622754491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5688622754491"
+                    Point2="0,35.5688622754491"
+                    Point3="4,35.5688622754491" />
+                  <mssgle:LineSegment
+                    End="199,35.5688622754491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="199,35.5688622754491"
+                    Point2="203,35.5688622754491"
+                    Point3="203,39.5688622754491" />
+                  <mssgle:LineSegment
+                    End="203,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Inner Join Demo.Paths[Sort Output1]"
+          TopLeft="357.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.6666666666666,60.0000000000001"
+              Start="0,0"
+              End="-10.6666666666666,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5688622754491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5688622754491"
+                    Point2="0,35.5688622754491"
+                    Point3="-4,35.5688622754491" />
+                  <mssgle:LineSegment
+                    End="-6.66666666666657,35.5688622754491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.66666666666657,35.5688622754491"
+                    Point2="-10.6666666666666,35.5688622754491"
+                    Point3="-10.6666666666666,39.5688622754491" />
+                  <mssgle:LineSegment
+                    End="-10.6666666666666,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\DFT_Inner Join Demo\Multicast"
+          TopLeft="260.5,313.5" />
+        <EdgeLayout
+          Id="Package\DFT_Inner Join Demo.Paths[Merge Join Output]"
+          TopLeft="326.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.3333333333333,60.0000000000001"
+              Start="0,0"
+              End="31.3333333333333,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="27.3333333333333,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.3333333333333,30.0000000000001"
+                    Point2="31.3333333333333,30.0000000000001"
+                    Point3="31.3333333333333,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="31.3333333333333,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="7.66666666666666,35.0000000000001,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Inner Join Demo\President Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Inner Join Demo\President_Lookup Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_Lookup Demo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\DFT_Lookup Demo\President Table"
+          TopLeft="306,78" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\DFT_Lookup Demo\Lookup"
+          TopLeft="332,186" />
+        <EdgeLayout
+          Id="Package\DFT_Lookup Demo.Paths[OLE DB Source Output]"
+          TopLeft="403.333333333333,120.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.9999999999999,65.3333333333334"
+              Start="0,0"
+              End="-13.9999999999999,57.8333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6666666666667"
+                    Point2="0,32.6666666666667"
+                    Point3="-4,32.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-9.99999999999994,32.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.99999999999994,32.6666666666667"
+                    Point2="-13.9999999999999,32.6666666666667"
+                    Point3="-13.9999999999999,36.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-13.9999999999999,57.8333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\DFT_Lookup Demo\Match Output"
+          TopLeft="14,345" />
+        <EdgeLayout
+          Id="Package\DFT_Lookup Demo.Paths[Lookup Match Output]"
+          TopLeft="371.555555555556,228.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-285.555555555556,116.333333333333"
+              Start="0,0"
+              End="-285.555555555556,108.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.4938837920489" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.4938837920489"
+                    Point2="0,47.4938837920489"
+                    Point3="-4,47.4938837920489" />
+                  <mssgle:LineSegment
+                    End="-281.555555555556,47.4938837920489" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-281.555555555556,47.4938837920489"
+                    Point2="-285.555555555556,47.4938837920489"
+                    Point3="-285.555555555556,51.4938837920489" />
+                  <mssgle:LineSegment
+                    End="-285.555555555556,108.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-199.837816840278,52.4938837920489,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\DFT_Lookup Demo\No Match Output"
+          TopLeft="677,339" />
+        <EdgeLayout
+          Id="Package\DFT_Lookup Demo.Paths[Lookup No Match Output]"
+          TopLeft="407.111111111111,228.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="349.888888888889,110.333333333333"
+              Start="0,0"
+              End="349.888888888889,102.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0443425076453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.0443425076453"
+                    Point2="0,45.0443425076453"
+                    Point3="4,45.0443425076453" />
+                  <mssgle:LineSegment
+                    End="345.888888888889,45.0443425076453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="345.888888888889,45.0443425076453"
+                    Point2="349.888888888889,45.0443425076453"
+                    Point3="349.888888888889,49.0443425076453" />
+                  <mssgle:LineSegment
+                    End="349.888888888889,102.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="110.269405381944,50.0443425076453,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Lookup Demo\President Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Lookup Demo\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[USPresident_Lookup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
