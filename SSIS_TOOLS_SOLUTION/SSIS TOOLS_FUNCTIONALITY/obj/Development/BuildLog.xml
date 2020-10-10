@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS TOOLS_FUNCTIONALITY</Name>
-    <LastWriteTime>2020-10-09T19:38:20.4730082Z</LastWriteTime>
+    <LastWriteTime>2020-10-10T18:06:06.6100121Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -24,6 +24,11 @@
     <ProjectBuildItemInfo>
       <Name>Aggregate-RemoveDuplicateRecords.dtsx</Name>
       <LastWriteTime>2020-10-09T19:38:18.3915942Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>RowCountTransformation.dtsx</Name>
+      <LastWriteTime>2020-10-10T19:08:01.9872307Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
