@@ -1,0 +1,884 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/9/2020 12:26:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:DTSID="{CF06C04E-C371-4DAA-8985-E8E2ACDD9015}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{8AB7D03A-1E0D-4947-AD14-2C0E762B84EB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.CDC_Demo]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{B0E995D0-75DB-48DB-B621-AD4A1873B6AF}"
+      DTS:ObjectName="DESKTOP-M7Q49F6\MSSQL.CDC_Demo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=CDC_Demo;Integrated Security=True;Application Name=SSIS-Package-{B0E995D0-75DB-48DB-B621-AD4A1873B6AF}DESKTOP-M7Q49F6\MSSQL.CDC_Demo;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{00A91B16-AB0B-40EA-9080-F008482DEBB8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CDC_State">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CDC Control Task"
+      DTS:CreationName="Attunity.CdcControlTask"
+      DTS:Description="CDC Control Task"
+      DTS:DTSID="{19AB4637-6F85-4051-B2EB-9FCD3E60A46F}"
+      DTS:ExecutableType="Attunity.CdcControlTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC Control Task"
+      DTS:TaskContact="Attunity Ltd.; All Rights Reserved; http://www.attunity.com;"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <CDCControlTask
+          Connection="DESKTOP-M7Q49F6\MSSQL.CDC_Demo"
+          TaskOperation="GetProcessingRange"
+          OperationParameter=""
+          StateConnection="DESKTOP-M7Q49F6\MSSQL.CDC_Demo"
+          StateVariable="User::CDC_State"
+          AutomaticStatePersistence="True"
+          StateName="CDC_State"
+          StateTable="[dbo].[cdc_states]"
+          CommandTimeout="30"
+          ChangeDetectionRetryInterval="10"
+          ChangeDetectionTimeout="60" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC Control Task 1"
+      DTS:CreationName="Attunity.CdcControlTask"
+      DTS:Description="CDC Control Task"
+      DTS:DTSID="{C557BBDD-177D-4A62-AF3B-24D26A35CAF5}"
+      DTS:ExecutableType="Attunity.CdcControlTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC Control Task 1"
+      DTS:TaskContact="Attunity Ltd.; All Rights Reserved; http://www.attunity.com;"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <CDCControlTask
+          Connection="DESKTOP-M7Q49F6\MSSQL.CDC_Demo"
+          TaskOperation="MarkProcessedRange"
+          OperationParameter=""
+          StateConnection="DESKTOP-M7Q49F6\MSSQL.CDC_Demo"
+          StateVariable="User::CDC_State"
+          AutomaticStatePersistence="True"
+          StateName="CDC_State"
+          StateTable="[dbo].[cdc_states]"
+          CommandTimeout="30"
+          ChangeDetectionRetryInterval="10"
+          ChangeDetectionTimeout="60" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5DB7C555-39C6-4AF8-9C2F-6FEDF14E6CE8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container 1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container 1\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{8312828A-CDCA-4FBF-8441-CF50A312048D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container 1\Data Flow Task\CDC Source"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Attunity Ltd.; All Rights Reserved; http://www.attunity.com;"
+                  description="Reads change data from a SQL Server change table making it available for processing by downstream data-flow components. Only changes within the current processing range determined by the CDC Control task are read"
+                  name="CDC Source"
+                  usesDispositions="true"
+                  version="8">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="An SSIS string package variable to store the CDC state of the current CDC state."
+                      expressionType="Notify"
+                      name="StateVariable"
+                      typeConverter="Attunity.SqlServer.CDCSrc.PackageVariablesTypeConverter">User::CDC_State</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the content of the metadata columns and the rows returned. Modes starting with ‘All’ return all changes and modes starting with ‘Net’ return net changes."
+                      expressionType="Notify"
+                      name="CDCProcessingMode"
+                      typeConverter="Attunity.SqlServer.CDCSrc.CdcProcessingMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The name of the CDC capture instance. By default the capture instance name is in the form of &quot;&lt;owner&gt;_&lt;table&gt;&quot;. The actual table that stores the changes is the CDC table named &quot;cdc&quot;.&quot;&lt;capture-instance&gt;_CT&quot;"
+                      expressionType="Notify"
+                      name="CaptureInstance">dbo_People</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time out."
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="If true, a special output column called ‘__$reprocessing ’ is added. This output column is true for each data row during the initial processing range, or when the previous CDC run&#xA;was stopped without finishing. The default value is false (the __$reprocessing output column is not generated). This special output column allows the SSIS developer to handle consistency errors differently when working on the Initial Processing Range or the previous CDC run was stopped."
+                      expressionType="Notify"
+                      name="ReprocessingIndication">false</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Attunity.CdcSourceComponent</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Connections[Connection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.CDC_Demo]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-M7Q49F6\MSSQL.CDC_Demo]"
+                      name="Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output]"
+                      name="Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$start_lsn]"
+                          dataType="bytes"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$start_lsn]"
+                          length="10"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$start_lsn]"
+                          name="__$start_lsn"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$seqval]"
+                          dataType="bytes"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$seqval]"
+                          length="10"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$seqval]"
+                          name="__$seqval"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$operation]"
+                          dataType="i4"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$operation]"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$operation]"
+                          name="__$operation"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$update_mask]"
+                          dataType="bytes"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$update_mask]"
+                          length="128"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$update_mask]"
+                          name="__$update_mask"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[id]"
+                          dataType="i4"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[id]"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[first_name]"
+                          dataType="wstr"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[first_name]"
+                          length="100"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[first_name]"
+                          name="first_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[last_name]"
+                          dataType="wstr"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[last_name]"
+                          length="100"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[last_name]"
+                          name="last_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[email]"
+                          dataType="wstr"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[email]"
+                          length="100"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[email]"
+                          name="email"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$start_lsn]"
+                          dataType="bytes"
+                          length="10"
+                          name="__$start_lsn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$seqval]"
+                          dataType="bytes"
+                          length="10"
+                          name="__$seqval" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$operation]"
+                          dataType="i4"
+                          name="__$operation" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[__$update_mask]"
+                          dataType="bytes"
+                          length="128"
+                          name="__$update_mask" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[first_name]"
+                          dataType="wstr"
+                          length="100"
+                          name="first_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[last_name]"
+                          dataType="wstr"
+                          length="100"
+                          name="last_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].ExternalColumns[email]"
+                          dataType="wstr"
+                          length="100"
+                          name="email" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput]"
+                      isErrorOut="true"
+                      name="ErrorOutput">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$start_lsn]"
+                          dataType="bytes"
+                          length="10"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$start_lsn]"
+                          name="__$start_lsn" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$seqval]"
+                          dataType="bytes"
+                          length="10"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$seqval]"
+                          name="__$seqval" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$operation]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$operation]"
+                          name="__$operation" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$update_mask]"
+                          dataType="bytes"
+                          length="128"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[__$update_mask]"
+                          name="__$update_mask" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[first_name]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[first_name]"
+                          name="first_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[last_name]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[last_name]"
+                          name="last_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[email]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[ErrorOutput].Columns[email]"
+                          name="email" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Attunity Ltd.; All Rights Reserved; http://www.attunity.com;"
+                  description="Directs a stream of net change records into different outputs based on the type of the change (Insert, Delete and Update). This allows specific handling for different types of change records."
+                  name="CDC Splitter 1"
+                  usesDispositions="true"
+                  version="8">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Attunity.CdcSplitterComponent</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input]"
+                      errorOrTruncationOperation="Operation of the changed row is not a valid one"
+                      errorRowDisposition="FailComponent"
+                      name="Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[__$start_lsn]"
+                          cachedDataType="bytes"
+                          cachedLength="10"
+                          cachedName="__$start_lsn"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$start_lsn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[__$seqval]"
+                          cachedDataType="bytes"
+                          cachedLength="10"
+                          cachedName="__$seqval"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$seqval]" />
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[__$operation]"
+                          cachedDataType="i4"
+                          cachedName="__$operation"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$operation]" />
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[__$update_mask]"
+                          cachedDataType="bytes"
+                          cachedLength="128"
+                          cachedName="__$update_mask"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[__$update_mask]" />
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[first_name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="first_name"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[first_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[last_name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="last_name"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[last_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input].Columns[email]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="email"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output].Columns[email]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[InsertOutput]"
+                      exclusionGroup="1"
+                      name="InsertOutput"
+                      synchronousInputId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Output type - Insert."
+                          name="OutputType"
+                          typeConverter="Attunity.SqlServer.CDCSplit.OutputType">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[DeleteOutput]"
+                      exclusionGroup="1"
+                      name="DeleteOutput"
+                      synchronousInputId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Output type - Delete."
+                          name="OutputType"
+                          typeConverter="Attunity.SqlServer.CDCSplit.OutputType">2</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[UpdateOutput]"
+                      exclusionGroup="1"
+                      name="UpdateOutput"
+                      synchronousInputId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Output type - Update."
+                          name="OutputType"
+                          typeConverter="Attunity.SqlServer.CDCSplit.OutputType">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[ErrorOutput]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ErrorOutput"
+                      synchronousInputId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Output type - Error."
+                          name="OutputType"
+                          typeConverter="Attunity.SqlServer.CDCSplit.OutputType">3</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[ErrorOutput].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[ErrorOutput].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container 1\Data Flow Task\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container 1\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\Multicast.Outputs[Multicast Output 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Sequence Container 1\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container 1\Data Flow Task\Multicast 1"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast 1">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container 1\Data Flow Task\Multicast 1.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\Multicast 1.Outputs[Multicast Output 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Sequence Container 1\Data Flow Task\Multicast 1.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container 1\Data Flow Task\Multicast 2"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast 2">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container 1\Data Flow Task\Multicast 2.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container 1\Data Flow Task\Multicast 2.Outputs[Multicast Output 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Sequence Container 1\Data Flow Task\Multicast 2.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container 1\Data Flow Task.Paths[DeleteOutput]"
+                  endId="Package\Sequence Container 1\Data Flow Task\Multicast 2.Inputs[Multicast Input 1]"
+                  name="DeleteOutput"
+                  startId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[DeleteOutput]" />
+                <path
+                  refId="Package\Sequence Container 1\Data Flow Task.Paths[InsertOutput]"
+                  endId="Package\Sequence Container 1\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  name="InsertOutput"
+                  startId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[InsertOutput]" />
+                <path
+                  refId="Package\Sequence Container 1\Data Flow Task.Paths[Output]"
+                  endId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Inputs[Input]"
+                  name="Output"
+                  startId="Package\Sequence Container 1\Data Flow Task\CDC Source.Outputs[Output]" />
+                <path
+                  refId="Package\Sequence Container 1\Data Flow Task.Paths[UpdateOutput]"
+                  endId="Package\Sequence Container 1\Data Flow Task\Multicast 1.Inputs[Multicast Input 1]"
+                  name="UpdateOutput"
+                  startId="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1.Outputs[UpdateOutput]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FAD89047-165A-40E5-A421-B509A381D2C3}"
+      DTS:From="Package\Sequence Container 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CDC Control Task 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D3BC0494-D507-445F-AD6B-B5A5F3AD8EE6}"
+      DTS:From="Package\CDC Control Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Sequence Container 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\CDC Control Task"
+          TopLeft="123.749998155981,47.2105272044106" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\CDC Control Task 1"
+          TopLeft="79.9999988079073,320.894742882153" />
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Sequence Container 1\Data Flow Task"
+          TopLeft="32.8333312844236,63.5614075912773" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="212.666666666667,161.333333333334"
+          Size="212.666666666667,204"
+          Id="Package\Sequence Container 1"
+          TopLeft="271.874995948747,111.52631788868" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="271.874995948747,213.52631788868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.541663807506,107.368424993473"
+              Start="0,0"
+              End="-104.541663807506,99.8684249934729">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-100.541663807506,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.541663807506,0"
+                    Point2="-104.541663807506,0"
+                    Point3="-104.541663807506,4" />
+                  <mssgle:LineSegment
+                    End="-104.541663807506,99.8684249934729" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="290.416664822648,68.5438605377439">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.7916644594322,42.982457350936"
+              Start="0,0"
+              End="87.7916644594322,35.482457350936">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.7916644594322,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.7916644594322,0"
+                    Point2="87.7916644594322,0"
+                    Point3="87.7916644594322,4" />
+                  <mssgle:LineSegment
+                    End="87.7916644594322,35.482457350936" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container 1\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="140,42.6666666666667"
+          Id="Package\Sequence Container 1\Data Flow Task\CDC Source"
+          TopLeft="173.749997410923,47.8947377436049" />
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\Sequence Container 1\Data Flow Task\CDC Splitter 1"
+          TopLeft="143.124997867271,145.052634309203" />
+        <EdgeLayout
+          Id="Package\Sequence Container 1\Data Flow Task.Paths[Output]"
+          TopLeft="243.749997410923,90.5614044102716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.6249995436517,54.4912298989318"
+              Start="0,0"
+              End="-26.6249995436517,46.9912298989318">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2456149494659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2456149494659"
+                    Point2="0,27.2456149494659"
+                    Point3="-4,27.2456149494659" />
+                  <mssgle:LineSegment
+                    End="-22.6249995436517,27.2456149494659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.6249995436517,27.2456149494659"
+                    Point2="-26.6249995436517,27.2456149494659"
+                    Point3="-26.6249995436517,31.2456149494659" />
+                  <mssgle:LineSegment
+                    End="-26.6249995436517,46.9912298989318" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Sequence Container 1\Data Flow Task\Multicast"
+          TopLeft="89.3749986682087,239.473688718024" />
+        <NodeLayout
+          Size="130.666666666667,42.6666666666667"
+          Id="Package\Sequence Container 1\Data Flow Task\Multicast 1"
+          TopLeft="224.999996647239,238.33333749311" />
+        <NodeLayout
+          Size="130.666666666667,42.6666666666667"
+          Id="Package\Sequence Container 1\Data Flow Task\Multicast 2"
+          TopLeft="374.999994412065,235.403512738528" />
+        <EdgeLayout
+          Id="Package\Sequence Container 1\Data Flow Task.Paths[InsertOutput]"
+          TopLeft="217.124997867271,187.71930097587">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-67.0833325323959,51.7543877421544"
+              Start="0,0"
+              End="-67.0833325323959,44.2543877421544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8771938710772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.8771938710772"
+                    Point2="0,25.8771938710772"
+                    Point3="-4,25.8771938710772" />
+                  <mssgle:LineSegment
+                    End="-63.0833325323959,25.8771938710772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.0833325323959,25.8771938710772"
+                    Point2="-67.0833325323959,25.8771938710772"
+                    Point3="-67.0833325323959,29.8771938710772" />
+                  <mssgle:LineSegment
+                    End="-67.0833325323959,44.2543877421544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-62.519654547448,30.8771938710772,57.9559765625,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container 1\Data Flow Task.Paths[UpdateOutput]"
+          TopLeft="240.458331200605,187.71930097587">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.8749987799674,50.6140365172402"
+              Start="0,0"
+              End="49.8749987799674,43.1140365172402">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5704105631564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5704105631564"
+                    Point2="0,20.5704105631564"
+                    Point3="4,20.5704105631564" />
+                  <mssgle:LineSegment
+                    End="45.8749987799674,20.5704105631564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.8749987799674,20.5704105631564"
+                    Point2="49.8749987799674,20.5704105631564"
+                    Point3="49.8749987799674,24.5704105631564" />
+                  <mssgle:LineSegment
+                    End="49.8749987799674,43.1140365172402" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.69283264126629,25.5704105631564,63.2606640625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container 1\Data Flow Task.Paths[DeleteOutput]"
+          TopLeft="252.124997867271,187.71930097587">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.208329878127,47.684211762658"
+              Start="0,0"
+              End="188.208329878127,40.184211762658">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4573828207404" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4573828207404"
+                    Point2="0,16.4573828207404"
+                    Point3="4,16.4573828207404" />
+                  <mssgle:LineSegment
+                    End="184.208329878127,16.4573828207404" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.208329878127,16.4573828207404"
+                    Point2="188.208329878127,16.4573828207404"
+                    Point3="188.208329878127,20.4573828207404" />
+                  <mssgle:LineSegment
+                    End="188.208329878127,40.184211762658" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="64.1577782203133,21.4573828207404,59.8927734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container 1\Data Flow Task\CDC Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
