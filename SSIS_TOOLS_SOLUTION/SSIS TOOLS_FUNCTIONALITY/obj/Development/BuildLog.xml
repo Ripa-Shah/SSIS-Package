@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS TOOLS_FUNCTIONALITY</Name>
-    <LastWriteTime>2020-10-11T00:46:54.7212827Z</LastWriteTime>
+    <LastWriteTime>2020-11-11T17:54:27.6728693Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -44,6 +44,11 @@
     <ProjectBuildItemInfo>
       <Name>Difference_Merge and unionall.dtsx</Name>
       <LastWriteTime>2020-10-11T01:06:15.7394431Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Slowly Changing Dimensions.dtsx</Name>
+      <LastWriteTime>2020-11-11T17:54:27.6330313Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
