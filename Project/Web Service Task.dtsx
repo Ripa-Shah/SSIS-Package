@@ -1,0 +1,110 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/12/2021 1:57:29 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:DTSID="{533ADBBA-3968-4335-868A-26C048FD2991}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{1CC7F093-27FE-4E01-ACA1-3B2844B3A98A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Goalkeeper.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{151FD12F-A5C3-4F75-94FF-223E57FE6800}"
+      DTS:ObjectName="Goalkeeper.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\19498\source\repos\ComplexProject\Goalkeeper.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{70C58B9A-78F1-42DB-964C-96EED1DC518F}"
+      DTS:ObjectName="HTTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="https://footballpool.dataaccess.eu/info.wso?WSDL">
+          <DTS:HttpConnection
+            DTS:ServerURL="https://footballpool.dataaccess.eu/info.wso?WSDL">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsPBrC8ibN0qcFVQdhR6oFQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABMclrRYLEAOW1c0T9PTn6+5Xp5V/ZXbWXbuc4SMcSmQQAAAAAOgAAAAAIAACAAAADGlSZrBg5feD/IaJIQxaf3iv38sKn+gzGPv5Zc/iI7iRAAAABeSd1Cy1616fVsS4sngyv2QAAAAAb11D/u3Hwbjru/FjTch36AxpzI3lZM/bCwd6NMgpGkDYgpo9Y7AAxJG/jmHopTqgEG8kdYab2Edet37qg63yQ</DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsPBrC8ibN0qcFVQdhR6oFQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA9rzdagPOxpwzHOcbX0fstE8vk1PC1C4pq4SaXnt0MagAAAAAOgAAAAAIAACAAAAC3sPuAdMcup2+vH9qVmD/cN5hbbi1Opb1qQZ4lDMxBlhAAAABwC5kieNx4+UIMsYu0xa/NQAAAAGP7xsSEdZDNJkknoQAJ1g54iLKSChuApDQzyeyQei72uTnzA3pW5Yo6U7fIJNEmY2qs2PlEiRMVU9XT9K4t1gU</DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ListOfAllteam.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{34F44B47-4182-4485-8C21-32875862811F}"
+      DTS:ObjectName="ListOfAllteam.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\19498\source\repos\ComplexProject\ListOfAllteam.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Goalkeeper"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Get Goal Keeper"
+      DTS:DTSID="{800E94CF-C51D-4537-B0DB-35ECDB98218D}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Goalkeeper"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{70C58B9A-78F1-42DB-964C-96EED1DC518F}"
+          WSTask:Service="Info"
+          WSTask:WSDLFile="C:\Users\19498\source\repos\ComplexProject\footballworldcup2010.wsdl"
+          WSTask:OutputLocation="Goalkeeper.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="PlayersWithGoalsRanked"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Returns an array with the names of all players that have scored a goal.</WSTask:Documentation>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Goalkeeper"
+          TopLeft="233.749996516854,233.999995815754" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
