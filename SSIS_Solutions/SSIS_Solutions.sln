@@ -5,12 +5,6 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_Project", "SSIS_Project\SSIS_Project.dtproj", "{43EED6BB-3608-4280-B8A6-5E67493A088F}"
 EndProject
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "LookupTransformation_Projects", "..\..\..\..\source\repos\LookupTransformation_Solution\LookupTransformation_Projects\LookupTransformation_Projects.dtproj", "{9DA1A421-768B-4AEA-8417-0FCAB54F2D28}"
-EndProject
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SendMailTask_Project", "..\..\..\..\source\repos\SendMailTask_Solution\SendMailTask_Project\SendMailTask_Project.dtproj", "{7DDB6122-2C24-417C-8D20-137575429F2C}"
-EndProject
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS TOOLS_FUNCTIONALITY", "..\..\..\..\source\repos\SSIS_TOOLS_SOLUTION\SSIS TOOLS_FUNCTIONALITY\SSIS TOOLS_FUNCTIONALITY.dtproj", "{F5225514-0BEF-44E9-AF5B-B7B5E827CBF2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -18,12 +12,6 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{43EED6BB-3608-4280-B8A6-5E67493A088F}.Development|Default.ActiveCfg = Development
 		{43EED6BB-3608-4280-B8A6-5E67493A088F}.Development|Default.Build.0 = Development
-		{9DA1A421-768B-4AEA-8417-0FCAB54F2D28}.Development|Default.ActiveCfg = Development
-		{9DA1A421-768B-4AEA-8417-0FCAB54F2D28}.Development|Default.Build.0 = Development
-		{7DDB6122-2C24-417C-8D20-137575429F2C}.Development|Default.ActiveCfg = Development
-		{7DDB6122-2C24-417C-8D20-137575429F2C}.Development|Default.Build.0 = Development
-		{F5225514-0BEF-44E9-AF5B-B7B5E827CBF2}.Development|Default.ActiveCfg = Development
-		{F5225514-0BEF-44E9-AF5B-B7B5E827CBF2}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
