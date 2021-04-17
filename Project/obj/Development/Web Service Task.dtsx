@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/12/2021 1:57:29 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:DTSID="{533ADBBA-3968-4335-868A-26C048FD2991}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{82A375E2-8D13-4EE1-BCBC-DA8BC6D5F67F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Goalkeeper.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{151FD12F-A5C3-4F75-94FF-223E57FE6800}"
+      DTS:ObjectName="Goalkeeper.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\19498\source\repos\ComplexProject\Goalkeeper.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{70C58B9A-78F1-42DB-964C-96EED1DC518F}"
+      DTS:ObjectName="HTTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="https://footballpool.dataaccess.eu/info.wso?WSDL">
+          <DTS:HttpConnection
+            DTS:ServerURL="https://footballpool.dataaccess.eu/info.wso?WSDL">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsPBrC8ibN0qcFVQdhR6oFQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC6nFb669c3SthhrNd80Vun29lLGtcOa32LJuh3xvXKOgAAAAAOgAAAAAIAACAAAAAmGMIp45UG8UJRTBQA0V4LOQ9vH4EXhxFvuVMKgItvxhAAAAAp89xsrLNVnu1pm65StAHUQAAAANaeb5dZMxUBbw9/h649+gNBDyyjsmSLwq/xXipd5MJElxUatPMn7NFEBylq6a/p8mtCYCJ4b/tEjUVMu9q22Qw</DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsPBrC8ibN0qcFVQdhR6oFQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC4eq7/D68Hv0HJwNe+IfTi9beEnOT18zOtya56j7VWYQAAAAAOgAAAAAIAACAAAADpBHZYz/gwdWrAHJJ0pG5tDxGEpbMNrCmqjHeTRfkPyRAAAABeapNvuiiXyFd9GXEkUcEDQAAAAFKExUY2HMwAOQmUWao5++WX3hSa4G3IHVt5RtAZFuEys9vyEIJ3bXgdIDZUYRemESgNAAlJ9zw96xpjSstUn5I</DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ListOfAllteam.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{34F44B47-4182-4485-8C21-32875862811F}"
+      DTS:ObjectName="ListOfAllteam.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\19498\source\repos\ComplexProject\ListOfAllteam.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Goalkeeper"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Get Goal Keeper"
+      DTS:DTSID="{800E94CF-C51D-4537-B0DB-35ECDB98218D}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Goalkeeper"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{70C58B9A-78F1-42DB-964C-96EED1DC518F}"
+          WSTask:Service="Info"
+          WSTask:WSDLFile="C:\Users\19498\source\repos\ComplexProject\footballworldcup2010.wsdl"
+          WSTask:OutputLocation="Goalkeeper.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="PlayersWithGoalsRanked"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Returns an array with the names of all players that have scored a goal.</WSTask:Documentation>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Web Service Task"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Web Service Task"
+      DTS:DTSID="{AEC46304-FC06-4AE8-B091-A9657308B742}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Web Service Task"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{70C58B9A-78F1-42DB-964C-96EED1DC518F}"
+          WSTask:Service="Info"
+          WSTask:WSDLFile="C:\Users\19498\source\repos\ComplexProject\footballworldcup2010.wsdl"
+          WSTask:OutputLocation="ListOfAllteam.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="Teams"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Get the top 10 teams starting with or containing the value of sTeamName</WSTask:Documentation>
+            <WSTask:ParamInfo
+              WSTask:Name="sTeamName"
+              WSTask:Datatype="string"
+              WSTask:ParamType="Variable"
+              WSTask:SeqNumber="0">
+              <WSTask:VariableValue></WSTask:VariableValue>
+            </WSTask:ParamInfo>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{43330D8A-AA58-4EBF-B405-4FC6DA10F458}"
+      DTS:From="Package\Web Service Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Goalkeeper" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Goalkeeper"
+          TopLeft="233.749996516854,233.999995815754" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Web Service Task"
+          TopLeft="204.374996954575,162.533332310518" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="285.708330287909,205.199998977184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.041666228945,28.7999968385697"
+              Start="0,0"
+              End="14.041666228945,21.2999968385697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.3999984192849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.3999984192849"
+                    Point2="0,14.3999984192849"
+                    Point3="4,14.3999984192849" />
+                  <mssgle:LineSegment
+                    End="10.041666228945,14.3999984192849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.041666228945,14.3999984192849"
+                    Point2="14.041666228945,14.3999984192849"
+                    Point3="14.041666228945,18.3999984192849" />
+                  <mssgle:LineSegment
+                    End="14.041666228945,21.2999968385697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
