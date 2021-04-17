@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS_Project</Name>
-    <LastWriteTime>2020-10-07T23:05:06.3019436Z</LastWriteTime>
+    <LastWriteTime>2021-04-16T17:08:19.102388Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -33,7 +33,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ExpressionTask.dtsx</Name>
-      <LastWriteTime>2020-10-07T23:05:06.2839569Z</LastWriteTime>
+      <LastWriteTime>2021-04-16T16:28:42.4523457Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>xmltosql.dtsx</Name>
+      <LastWriteTime>2021-04-16T16:39:51.5267546Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Execute Packages-Master.dtsx</Name>
+      <LastWriteTime>2021-04-16T17:57:59.8457036Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
