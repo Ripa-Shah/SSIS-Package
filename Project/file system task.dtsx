@@ -1,0 +1,208 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/12/2021 12:59:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-M7Q49F6"
+  DTS:CreatorName="DESKTOP-M7Q49F6\19498"
+  DTS:DTSID="{5972D534-CF37-4A70-B0F9-E203AFF3E0FC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{EE423B5A-90D1-432F-BCE0-B080EF1651BC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4B693518-3212-417E-893B-8CE454CC5CD0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestinationFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">c:\test</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1E16DEA7-3F80-415C-8EBC-25BDDC6E0EAA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\19498\source\repos\ComplexProject\sample.doc</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copy File"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Copy File"
+      DTS:DTSID="{FDAB49EE-4944-45EE-B726-BCFB31EF378E}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy File"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskSourcePath="User::SourceFilePath"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::DestinationFolder"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Archive Folder"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{A4665E33-DC58-40D1-82C1-A9C60D7B6814}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Archive Folder"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CreateDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::DestinationFolder"
+          TaskIsSourceVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generate Destination Folder Path"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{0E2E0DD7-B6F0-4869-B4A4-E0A82BE2083F}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generate Destination Folder Path"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::DestinationFolder]= REPLACE( @[User::SourceFilePath] , TOKEN( @[User::SourceFilePath] , &quot;\\&quot;,  TOKENCOUNT( @[User::SourceFilePath] , &quot;\\&quot;)),&quot;Archive&quot; )" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0A38BCE-FC72-4763-9BA2-9A5EECAF4684}"
+      DTS:From="Package\Generate Destination Folder Path"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create Archive Folder" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BFE2187E-AFBB-4D26-BB1D-933E3BA97365}"
+      DTS:From="Package\Create Archive Folder"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Copy File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236,42.6666666666667"
+          Id="Package\Generate Destination Folder Path"
+          TopLeft="232.49999653548,27.299999511838" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Create Archive Folder"
+          TopLeft="243.124996377155,129.999997675419" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="350.49999653548,69.9666661785046">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.3750001583248,60.0333314969142"
+              Start="0,0"
+              End="-17.3750001583248,52.5333314969142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0166657484571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0166657484571"
+                    Point2="0,30.0166657484571"
+                    Point3="-4,30.0166657484571" />
+                  <mssgle:LineSegment
+                    End="-13.3750001583248,30.0166657484571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.3750001583248,30.0166657484571"
+                    Point2="-17.3750001583248,30.0166657484571"
+                    Point3="-17.3750001583248,34.0166657484571" />
+                  <mssgle:LineSegment
+                    End="-17.3750001583248,52.5333314969142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="122.666666666667,42.6666666666667"
+          Id="Package\Copy File"
+          TopLeft="241.874996395782,225.549995966852" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="333.124996377155,172.666664342086">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.9166666480402,52.8833316247662"
+              Start="0,0"
+              End="-29.9166666480402,45.3833316247662">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4416658123831" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.4416658123831"
+                    Point2="0,26.4416658123831"
+                    Point3="-4,26.4416658123831" />
+                  <mssgle:LineSegment
+                    End="-25.9166666480402,26.4416658123831" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.9166666480402,26.4416658123831"
+                    Point2="-29.9166666480402,26.4416658123831"
+                    Point3="-29.9166666480402,30.4416658123831" />
+                  <mssgle:LineSegment
+                    End="-29.9166666480402,45.3833316247662" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
